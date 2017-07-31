@@ -1,0 +1,13 @@
+[Unit]
+Description=Python MQTT client
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/srv/mqtt_worker
+ExecStart=/srv/mqtt_worker/mqtt_worker.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
