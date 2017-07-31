@@ -10,3 +10,5 @@ mqtt_processor.py - process the messages, put business logic here
 config.py - contains the config data for the connection, log etc.
 
 mqtt_worker.sh - init.d script to create daemon from this python script
+
+mqtt_daemon.service - basic systemd script to start the python script as service
