@@ -29,9 +29,9 @@ logging.basicConfig(filename=config.logfile,level=logging.DEBUG,format='%(asctim
 # MAIN PROCESSING METHOD #
 ##########################
 
-def process_message (msg):
+def process_message (msg, client):
     logging.debug("Processing topic: " + msg.topic + " - data: " + msg.payload  );
-    processor.process(msg);
+    processor.process(msg, client);
 
 #################################
 # END OF MAIN PROCESSING METHOD #
@@ -66,7 +66,7 @@ def on_connect(client, userdata, flags, rc):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    process_message(msg);
+    process_message(msg, client);
 
 client = mqtt.Client()
 client.on_connect = on_connect
