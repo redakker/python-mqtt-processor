@@ -53,5 +53,5 @@ def process (msg, client):
 
     if msg.topic == "/home/speak/sentence":
 	if msg.payload:
-	    os.system("/srv/xiaomi_speak/speak.sh " + msg.payload);
+	    os.system("/srv/xiaomi_speak/speak.sh -l hu-HU -n -t \"" + msg.payload + "\"");
 	    logging.debug("Speak" + msg.payload);
